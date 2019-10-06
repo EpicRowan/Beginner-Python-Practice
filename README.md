@@ -1,1 +1,1 @@
-# playing around with the magic of Pycharm
+# Python beginner exercies and practices
