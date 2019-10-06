@@ -1,0 +1,56 @@
+import random
+
+def name_to_number(name):
+    if name == "rock":
+        return 0
+    if name == "Spock":
+        return 1
+    if name == "paper":
+        return 2
+    if name == "lizard":
+        return 3
+    if name == "scissors":
+        return 4
+    else:
+        return "Invalid input"
+
+def number_to_name(number):
+    if number == 0:
+        return "rock"
+    if number == 1:
+        return "Spock"
+    if number == 2:
+        return "paper"
+    if number == 3:
+        return "lizard"
+    if number == 4:
+        return "scissors"
+    else:
+        return "Invalid input"
+
+
+def rpsls(player_choice): 
+    print ""
+    print "Player chooses " + str(player_choice)
+    player_choice = name_to_number(player_choice)
+    comp_number = random.randrange(0,5)
+    print "Computer chooses " + number_to_name(comp_number)
+    num = (comp_number - player_choice) % 5
+    if num == 0:
+        print "Computer and Player Tie!"
+    if num  == 1:
+        print "Computer wins!"
+    if num  == 2:
+        print "Computer wins!"
+    if num  == 3:
+        print "Player wins!"
+    if num  == 4:
+        print "Player wins!"
+   
+
+   
+rpsls("rock")
+rpsls("Spock")
+rpsls("paper")
+rpsls("lizard")
+rpsls("scissors")
