@@ -1,0 +1,50 @@
+def show_word(secret_word, guessed):
+    result = ""
+
+    for letter in secret_word:
+        if letter in guessed:
+            result = result + letter
+        else:
+            result = result + "-"
+
+    print(result)
+
+
+
+
+def handle_guess(guess, guessed, secret_word):
+    guessed[guess] = 1
+    if guess in secret_word:
+            print("Right!")
+    else:
+            print("Wrong!")
+
+
+
+def main_loop(secret_word):
+
+    guessed = {}
+
+    while not you_won(secret_word, guessed):
+        guess = input("Guess a letter")
+        handle_guess(guess, guessed, secret_word)
+        show_word(secret_word, guessed)
+
+
+
+def you_won(secret_word, guessed):
+    for letter in secret_word:
+        if not (letter in guessed):
+            return False
+
+    return True
+
+
+
+def play_game():
+
+    secret_word = "mountain"
+
+    main_loop(secret_word)
+
+play_game()
